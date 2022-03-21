@@ -14,7 +14,7 @@
           <b-nav-item to="/editar">Editar</b-nav-item>
         </b-navbar-nav>
 
-        <!-- Right aligned nav items -->
+       
       </b-collapse>
       <span @click="logout" v-b-tooltip.hover title="Exit"><b-avatar icon="door-closed"> </b-avatar
       ></span>
@@ -30,7 +30,7 @@ export default {
   methods:{
     logout(){
       getAuth().signOut().then((response)=>{
-        alert("Deslogeado!")
+        alert("¡Hasta Luego!")
         this.$router.push("/Login")
       });
     }
