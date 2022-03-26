@@ -95,12 +95,12 @@
       </table>
 
       <div>
-        <input class="uno m-2" type="text" readonly="readonly" />
-        <input class="dos m-2" type="text" readonly="readonly" />
-        <input class="tres m-2" type="text" readonly="readonly" />
-        <input class="cuatro m-2" type="text" readonly="readonly" />
-        <input class="cinco m-2" type="text" readonly="readonly" />
-        <input class="seis m-2" type="text" readonly="readonly" />
+        <input class="uno m-2" type="text" readonly="readonly" placeholder="Cantidad total de alumnos permitidos: 190 alumnos"/>
+        <input class="dos m-2" type="text" readonly="readonly" placeholder="Cantidad  total de alumnos inscritos: 103 alumnos"/>
+        <input class="tres m-2" type="text" readonly="readonly" placeholder="Cantidad total de cupos restantes: 87 alumnos"/>
+        <input class="cuatro m-2" type="text" readonly="readonly" placeholder="Cantidad total de cursos terminados: 2 cursos"/>
+        <input class="cinco m-2" type="text" readonly="readonly" placeholder="Cantidad total de cursos activos: 4 cursos"/>
+        <input class="seis m-2" type="text" readonly="readonly" placeholder="Cantidad total de cursos: 6 cursos"/>
       </div>
 
       <b-modal v-model="modalShow">
@@ -282,5 +282,15 @@ input {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+table {
+  text-align: left;
+  width: 100%;
+}
+th {
+  padding-right: 20px;
+}
+td {
+  padding-right: 20px;
 }
 </style>

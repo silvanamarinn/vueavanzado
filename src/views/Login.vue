@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Login Usuario</h1>
+    <h2 style="margin: 20px 0">Login Usuario</h2>
     <b-container class="bv-example-row">
       <div>
         <input class="m-2" placeholder="E-mail" v-model="usuario.email" />
@@ -10,7 +10,7 @@
           v-model="usuario.password"
           type="password"
         />
-        <b-button class="m-3" variant="success" @click="iniciarSesion"
+        <b-button class="m-3" variant="success" @click="login"
           >Iniciar</b-button
         >
 
@@ -22,7 +22,6 @@
 </template>
 
 <script>
-import { getAuth, signInWithEmailAndPassword } from "@firebase/auth";
 import { mapActions } from "vuex";
 export default {
   data() {
@@ -34,16 +33,14 @@ export default {
     };
   },
   methods: {
-    ...mapActions(["inciar_Sesion"]),
-    async iniciarSesion() {
+    ...mapActions(["iniciarSesion"]),
+    async login() {
       const { email, password } = this.usuario;
-      const auth = getAuth();
-      await signInWithEmailAndPassword(auth, email, password).then(
-        (response) => {
-          console.log("Estas logeado!");
-          this.$router.push("/");
-        }
-      );
+      await this.iniciarSesion({ email, password });
+      alert("Estas logeado!");
+      this.$router.push("/");
+      this.usuario.email = "";
+      this.usuario.password = "";
     },
   },
 };
